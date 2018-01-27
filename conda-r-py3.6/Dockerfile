@@ -17,13 +17,15 @@ RUN conda update jupyter ipython conda -y && \
 
 ADD s2i /usr/libexec/s2i
 
+# this needs to be more elegant
+RUN mkdir $JUPYTER_CONFIG_DIR && chmod -R a+wrx $JUPYTER_CONFIG_DIR
+
 EXPOSE 8888
 
 USER 1001
 
 ENV JUPYTER_CONFIG_DIR="/jupyter"
 
-RUN mkdir $JUPYTER_CONFIG_DIR
 WORKDIR $JUPYTER_CONFIG_DIR
 
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0"]

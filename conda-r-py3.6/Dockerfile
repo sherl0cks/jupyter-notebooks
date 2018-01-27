@@ -17,14 +17,14 @@ RUN conda update jupyter ipython conda -y && \
 
 ADD s2i /usr/libexec/s2i
 
+ENV JUPYTER_CONFIG_DIR="/jupyter"
+
 # this needs to be more elegant
 RUN mkdir $JUPYTER_CONFIG_DIR && chmod -R a+wrx $JUPYTER_CONFIG_DIR
 
 EXPOSE 8888
 
 USER 1001
-
-ENV JUPYTER_CONFIG_DIR="/jupyter"
 
 WORKDIR $JUPYTER_CONFIG_DIR
 

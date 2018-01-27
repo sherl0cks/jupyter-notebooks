@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM docker.io/centos:latest
 
 ENV ANACONDA_URI=https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 ENV PATH="/opt/anaconda3/bin:$PATH"

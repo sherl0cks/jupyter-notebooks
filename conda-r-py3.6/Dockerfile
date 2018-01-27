@@ -2,7 +2,6 @@ FROM centos:latest
 
 ENV ANACONDA_URI=https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 ENV PATH="/opt/anaconda3/bin:$PATH"
-ENV JUPYTER_CONFIG_DIR="/jupyter"
 
 USER root
 
@@ -21,6 +20,8 @@ ADD s2i /usr/libexec/s2i
 EXPOSE 8888
 
 USER 1001
+
+ENV JUPYTER_CONFIG_DIR="/jupyter"
 
 RUN mkdir $JUPYTER_CONFIG_DIR
 WORKDIR $JUPYTER_CONFIG_DIR

@@ -28,5 +28,7 @@ USER 1001
 
 WORKDIR $JUPYTER_CONFIG_DIR
 
+ENV HOME=$JUPYTER_CONFIG_DIR
+
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0"]
 

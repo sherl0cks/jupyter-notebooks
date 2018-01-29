@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# TODO support the oshinko spark cluster stuff
+# probably should be disabled by default and then enabled via an DeployConfig ENV VAR
+# https://github.com/radanalyticsio/oshinko-s2i/blob/master/scripts/common/added/utils/start.sh
+
+exec jupyter notebook --port=8888 --no-browser --ip=0.0.0.0

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -x
+
+set -eo pipefail
+
+# This only supports conda packages now, but we could support other package manages as well.
+# That may get hairy...
+if [ -f /tmp/src/requirements.txt ]; then
+    conda install --file /tmp/src/requirements.txt
+else
+    echo "no file found. nothing to do"
+fi

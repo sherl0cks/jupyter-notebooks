@@ -20,7 +20,7 @@ RUN INSTALL_PKGS="bzip2" && \
 
 RUN curl -o installAnacoda.sh $ANACONDA_URI && \
     chmod a+x installAnacoda.sh && \
-    ./installAnacoda.sh -b -p $ANACONDA_HOME &&
+    ./installAnacoda.sh -b -p $ANACONDA_HOME && \
     rm installAnacoda.sh 
 
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
